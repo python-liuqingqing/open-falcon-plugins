@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import time
 import yaml
 
 import esmetrics
@@ -14,5 +14,8 @@ for es_cluster in config['es-clusters']:
     metric_thread.start()
     threads.append(metric_thread)
 
-for thread in threads:
-    thread.join(5)
+if __name__ == '__main__':
+    with True:
+        time.sleep(30)
+        for thread in threads:
+            thread.join(5)
